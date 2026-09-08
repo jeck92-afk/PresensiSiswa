@@ -19,9 +19,23 @@ const resolvedConfig = {
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || firebaseConfig?.messagingSenderId || '',
 };
 
-// Initialize Firebase App if not already initialized
-const app = getApps().length === 0 ? initializeApp(resolvedConfig) : getApp();
-export const auth = getAuth(app);
+// Initialize Firebase App safely if credentials exist
+let app: any = null;
+let authInstance: any = null;
+
+try {
+  if (getApps().length > 0) {
+    app = getApp();
+    authInstance = getAuth(app);
+  } else if (resolvedConfig.apiKey) {
+    app = initializeApp(resolvedConfig);
+    authInstance = getAuth(app);
+  }
+} catch (e) {
+  console.warn('Firebase init warning:', e);
+}
+
+export const auth = authInstance;
 
 export const SCOPES = [
   'https://www.googleapis.com/auth/spreadsheets',
@@ -41,6 +55,11 @@ export const initAuth = (
   onAuthSuccess?: (user: User, token: string) => void,
   onAuthFailure?: () => void
 ) => {
+  if (!auth) {
+    if (onAuthFailure) onAuthFailure();
+    return () => {};
+  }
+
   return onAuthStateChanged(auth, async (user: User | null) => {
     if (user) {
       if (cachedAccessToken) {
@@ -87,6 +106,10 @@ export const googleSignIn = async (): Promise<{ user: User; accessToken: string 
     return null;
   }
 
+  if (!auth) {
+    throw new Error('Layanan Google Auth / Firebase belum terkonfigurasi pada lingkungan ini. Silakan periksa pengaturan lingkungan.');
+  }
+
   try {
     isSigningIn = true;
     const result = await signInWithPopup(auth, provider);
@@ -125,6 +148,8 @@ export const setCachedAccessToken = (token: string | null) => {
 };
 
 export const logoutGoogle = async () => {
-  await signOut(auth);
+  if (auth) {
+    await signOut(auth);
+  }
   cachedAccessToken = null;
 };
