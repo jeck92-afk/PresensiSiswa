@@ -130,9 +130,20 @@ export default function App() {
       const saved = localStorage.getItem('presensi_qr_config');
       if (saved) {
         const parsed = JSON.parse(saved);
+        const isOldPrincipal =
+          !parsed.principalName ||
+          parsed.principalName.includes('Bambang Sujarwo') ||
+          parsed.principalNip === '19720415 199803 1 004';
+
         return {
           ...DEFAULT_SCHOOL_CONFIG,
           ...parsed,
+          principalName: isOldPrincipal
+            ? DEFAULT_SCHOOL_CONFIG.principalName
+            : parsed.principalName,
+          principalNip: isOldPrincipal
+            ? DEFAULT_SCHOOL_CONFIG.principalNip
+            : parsed.principalNip,
           developerName: parsed.developerName || DEFAULT_SCHOOL_CONFIG.developerName,
           developerTitle: parsed.developerTitle || DEFAULT_SCHOOL_CONFIG.developerTitle,
           developerPhotoUrl: parsed.developerPhotoUrl || DEFAULT_SCHOOL_CONFIG.developerPhotoUrl,

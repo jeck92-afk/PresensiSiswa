@@ -3,12 +3,12 @@ import { Teacher, ParentInfo, SchoolClass, SubjectItem, ScheduleItem, TeacherJou
 export const INITIAL_TEACHERS: Teacher[] = [
   {
     id: 'TCH-001',
-    nip: '19720415 199803 1 004',
-    name: 'Drs. H. Bambang Sujarwo, M.Pd.',
+    nip: '197210232000081001',
+    name: 'Julis Noya, S.Sos., S.Pd., Gr',
     gender: 'L',
-    subject: 'Fisika & Manajemen Sekolah',
+    subject: 'Sosiologi & Manajemen Sekolah',
     phone: '081234567801',
-    email: 'bambang.sujarwo@smamalu.sch.id',
+    email: 'julis.noya@smamalu.sch.id',
     status: 'PNS',
   },
   {
@@ -141,7 +141,7 @@ export const INITIAL_SUBJECTS: SubjectItem[] = [
     id: 'SBJ-006',
     code: 'MLK-301',
     name: 'Budaya Bahari Kepulauan Maluku',
-    teacherName: 'Drs. H. Bambang Sujarwo, M.Pd.',
+    teacherName: 'Julis Noya, S.Sos., S.Pd., Gr',
     category: 'Muatan Lokal',
     hoursPerWeek: 2,
   },

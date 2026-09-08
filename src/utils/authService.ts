@@ -24,10 +24,10 @@ export const DEFAULT_ADMIN_ACCOUNTS: AdminAccount[] = [
     id: 'ADM-03',
     username: 'kepsek',
     passwordHash: 'kepsek123',
-    fullName: 'Drs. H. Bambang Sujarwo, M.Pd.',
+    fullName: 'Julis Noya, S.Sos., S.Pd., Gr',
     role: 'Kepala Sekolah',
     email: 'kepsek@sekolah.sch.id',
-    nip: '19720415 199803 1 004',
+    nip: '197210232000081001',
   },
 ];
 
@@ -44,7 +44,21 @@ export const getAdminAccounts = (): AdminAccount[] => {
     if (saved) {
       const parsed = JSON.parse(saved);
       if (Array.isArray(parsed) && parsed.length > 0) {
-        return parsed;
+        // Automatically sync kepsek name and NIP if still using initial placeholder
+        const updated = parsed.map((acc: AdminAccount) => {
+          if (
+            acc.role === 'Kepala Sekolah' &&
+            (acc.fullName.includes('Bambang Sujarwo') || !acc.nip || acc.nip.includes('19720415'))
+          ) {
+            return {
+              ...acc,
+              fullName: 'Julis Noya, S.Sos., S.Pd., Gr',
+              nip: '197210232000081001',
+            };
+          }
+          return acc;
+        });
+        return updated;
       }
     }
   } catch (e) {
