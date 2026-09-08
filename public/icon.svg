@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+
+    <!-- Gold Accent Gradients -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="35%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+
+    <!-- Flame Gradient -->
+    <linearGradient id="flameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="50%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#fef08a" />
+    </linearGradient>
+
+    <!-- Inner Glow/Shadow -->
+    <filter id="subtleShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Outer Ring Shadow & Base -->
+  <circle cx="100" cy="100" r="95" fill="#0f172a" filter="url(#subtleShadow)" />
+  
+  <!-- Outer Gold Border -->
+  <circle cx="100" cy="100" r="93" fill="none" stroke="url(#goldGrad)" stroke-width="4" />
+  
+  <!-- Inner Subtle Beaded Ring -->
+  <circle cx="100" cy="100" r="87" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.6" />
+  
+  <!-- Main Deep Blue Inner Field -->
+  <circle cx="100" cy="100" r="84" fill="url(#shieldGrad)" />
+
+  <!-- Radiating Sunburst Rays in Background -->
+  <g opacity="0.12" stroke="#60a5fa" stroke-width="1.5">
+    <line x1="100" y1="18" x2="100" y2="40" />
+    <line x1="100" y1="160" x2="100" y2="182" />
+    <line x1="18" y1="100" x2="40" y2="100" />
+    <line x1="160" y1="100" x2="182" y2="100" />
+    <line x1="42" y1="42" x2="58" y2="58" />
+    <line x1="142" y1="142" x2="158" y2="158" />
+    <line x1="42" y1="158" x2="58" y2="142" />
+    <line x1="142" y1="58" x2="158" y2="42" />
+  </g>
+
+  <!-- Laurel Wreath Leaves (Left Side) -->
+  <g fill="url(#goldGrad)" opacity="0.95">
+    <!-- Left Branch Leaves -->
+    <path d="M 38,110 C 32,102 36,92 44,95 C 46,101 42,108 38,110 Z" />
+    <path d="M 34,92 C 30,84 36,75 43,79 C 44,85 39,91 34,92 Z" />
+    <path d="M 38,73 C 35,65 43,58 49,63 C 49,69 43,74 38,73 Z" />
+    <path d="M 48,56 C 47,48 57,43 62,49 C 60,55 53,58 48,56 Z" />
+    <path d="M 64,43 C 65,35 76,33 80,40 C 76,45 69,46 64,43 Z" />
+    <!-- Branch Stem Left -->
+    <path d="M 40,118 Q 30,82 72,42" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- Right Branch Leaves -->
+    <path d="M 162,110 C 168,102 164,92 156,95 C 154,101 158,108 162,110 Z" />
+    <path d="M 166,92 C 170,84 164,75 157,79 C 156,85 161,91 166,92 Z" />
+    <path d="M 162,73 C 165,65 157,58 151,63 C 151,69 157,74 162,73 Z" />
+    <path d="M 152,56 C 153,48 143,43 138,49 C 140,55 147,58 152,56 Z" />
+    <path d="M 136,43 C 135,35 124,33 120,40 C 124,45 131,46 136,43 Z" />
+    <!-- Branch Stem Right -->
+    <path d="M 160,118 Q 170,82 128,42" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round" />
+  </g>
+
+  <!-- Torch Handle & Bowl (Centered) -->
+  <g filter="url(#subtleShadow)">
+    <!-- Torch Handle Shaft -->
+    <path d="M 96,128 L 104,128 L 102,154 L 98,154 Z" fill="url(#goldGrad)" />
+    <!-- Torch Ring / Knobs -->
+    <rect x="94" y="125" width="12" height="3.5" rx="1" fill="#fef08a" />
+    <rect x="96" y="152" width="8" height="3" rx="1" fill="#d97706" />
+    <!-- Torch Cup / Bowl -->
+    <path d="M 91,106 L 109,106 L 106,124 C 106,126 94,126 94,124 Z" fill="url(#goldGrad)" stroke="#b45309" stroke-width="0.8" />
+    <ellipse cx="100" cy="106" rx="9" ry="2.5" fill="#fde047" />
+
+    <!-- Radiant Flame of Knowledge -->
+    <!-- Outer Flame -->
+    <path d="M 100,60 C 109,72 115,84 109,98 C 106,104 94,104 91,98 C 85,84 91,72 100,60 Z" fill="url(#flameGrad)" />
+    <!-- Inner High-Heat Flame Core -->
+    <path d="M 100,74 C 104,82 107,89 104,97 C 102,100 98,100 96,97 C 93,89 96,82 100,74 Z" fill="#ffffff" opacity="0.9" />
+  </g>
+
+  <!-- Open Book of Knowledge (Spanning Across Lower Center) -->
+  <g filter="url(#subtleShadow)">
+    <!-- Book Outer Cover Backing -->
+    <path d="M 100,126 C 118,121 144,124 156,129 L 156,155 C 144,150 118,147 100,153 C 82,147 56,150 44,155 L 44,129 C 56,124 82,121 100,126 Z" fill="#0c4a6e" stroke="url(#goldGrad)" stroke-width="1.8" />
+    
+    <!-- Left Page (Crisp White with subtle shade) -->
+    <path d="M 100,124 C 84,119 60,122 48,127 L 48,150 C 60,145 84,142 100,148 Z" fill="#f8fafc" />
+    <!-- Right Page -->
+    <path d="M 100,124 C 116,119 140,122 152,127 L 152,150 C 140,145 116,142 100,148 Z" fill="#ffffff" />
+    
+    <!-- Spine Centerfold Divider -->
+    <line x1="100" y1="124" x2="100" y2="152" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Book Page Text Lines (Simulated Knowledge Text) -->
+    <!-- Left Page Lines -->
+    <path d="M 56,132 C 68,129 82,128 92,131" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round" />
+    <path d="M 56,137 C 68,134 82,133 92,136" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round" />
+    <path d="M 56,142 C 68,139 82,138 92,141" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round" />
+
+    <!-- Right Page Lines -->
+    <path d="M 108,131 C 118,128 132,129 144,132" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round" />
+    <path d="M 108,136 C 118,133 132,134 144,137" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round" />
+    <path d="M 108,141 C 118,138 132,139 144,142" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round" />
+  </g>
+
+  <!-- Golden Stars of Excellence at the Top -->
+  <!-- Center Star (Largest) -->
+  <polygon points="100,28 102.5,35 110,35.5 104,40 106,47 100,43 94,47 96,40 90,35.5 97.5,35" fill="url(#goldGrad)" filter="url(#subtleShadow)" />
+  <!-- Left Star -->
+  <polygon points="82,34 83.5,39 88.5,39.5 84.5,42.5 86,47.5 82,44.5 78,47.5 79.5,42.5 75.5,39.5 80.5,39" fill="url(#goldGrad)" opacity="0.9" />
+  <!-- Right Star -->
+  <polygon points="118,34 119.5,39 124.5,39.5 120.5,42.5 122,47.5 118,44.5 114,47.5 115.5,42.5 111.5,39.5 116.5,39" fill="url(#goldGrad)" opacity="0.9" />
+
+  <!-- Bottom Ribbon / Banner -->
+  <g filter="url(#subtleShadow)">
+    <!-- Ribbon Tails -->
+    <path d="M 46,166 L 36,178 L 52,176 Z" fill="#92400e" />
+    <path d="M 154,166 L 164,178 L 148,176 Z" fill="#92400e" />
+    
+    <!-- Main Banner Fold -->
+    <path d="M 48,162 Q 100,172 152,162 L 150,174 Q 100,184 50,174 Z" fill="url(#goldGrad)" stroke="#b45309" stroke-width="0.8" />
+    
+    <!-- Motto Text on Banner -->
+    <text x="100" y="171" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="6.5" font-weight="900" fill="#0f172a" text-anchor="middle" letter-spacing="1.2">PRESTASI &amp; KARAKTER</text>
+  </g>
+</svg>

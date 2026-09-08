@@ -1,0 +1,10 @@
+{
+  "name": "Presensi QR Siswa",
+  "description": "SIADIK (SISTEM ABSENSI DIGITAL KITA) - Aplikasi presensi dan absensi siswa berbasis pemindaian QR Code dengan integrasi notifikasi WhatsApp orang tua, basis data Google Spreadsheet, kartu pelajar digital, dan rekapitulasi data.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

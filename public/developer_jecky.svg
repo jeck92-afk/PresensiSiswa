@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient representing modern conference hall -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <!-- Warm Bokeh Lighting -->
+    <radialGradient id="bokeh1" cx="30%" cy="20%" r="40%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bokeh2" cx="80%" cy="25%" r="35%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Skin Tone Gradients -->
+    <linearGradient id="skinBase" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d49b6a"/>
+      <stop offset="100%" stop-color="#be8251"/>
+    </linearGradient>
+    <linearGradient id="skinShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a86e3f"/>
+      <stop offset="100%" stop-color="#8f572a"/>
+    </linearGradient>
+
+    <!-- Batik Pattern -->
+    <pattern id="batikPattern" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#18181b"/>
+      <!-- Gold Batik motif -->
+      <path d="M12 2 L22 12 L12 22 L2 12 Z" fill="none" stroke="#d97706" stroke-width="1.5" opacity="0.85"/>
+      <circle cx="12" cy="12" r="3" fill="#b45309"/>
+      <path d="M0 0 L6 6 M24 0 L18 6 M0 24 L6 18 M24 24 L18 18" stroke="#f59e0b" stroke-width="1.2" opacity="0.7"/>
+    </pattern>
+
+    <!-- Navy Vest Gradient -->
+    <linearGradient id="vestGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <clipPath id="circleClip">
+      <circle cx="200" cy="200" r="190"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#circleClip)">
+    <!-- Canvas Background -->
+    <rect width="400" height="400" fill="url(#bgGrad)"/>
+    <circle cx="90" cy="80" r="110" fill="url(#bokeh1)"/>
+    <circle cx="310" cy="90" r="100" fill="url(#bokeh2)"/>
+
+    <!-- Conference Screens in background blur -->
+    <rect x="30" y="40" width="70" height="45" rx="4" fill="#ffffff" opacity="0.08"/>
+    <rect x="300" y="40" width="70" height="45" rx="4" fill="#ffffff" opacity="0.08"/>
+
+    <!-- Inner Batik Shirt -->
+    <path d="M120 270 Q200 300 280 270 L340 400 L60 400 Z" fill="url(#batikPattern)"/>
+
+    <!-- Neck / Throat -->
+    <path d="M168 200 L168 265 Q200 285 232 265 L232 200 Z" fill="url(#skinShadow)"/>
+    <path d="M174 200 L174 255 Q200 275 226 255 L226 200 Z" fill="url(#skinBase)"/>
+
+    <!-- Navy Outer Utility Vest with Zipper & Collar -->
+    <!-- Left Vest Panel -->
+    <path d="M60 400 L110 270 L165 260 L185 400 Z" fill="url(#vestGrad)" stroke="#334155" stroke-width="1.5"/>
+    <!-- Right Vest Panel -->
+    <path d="M340 400 L290 270 L235 260 L215 400 Z" fill="url(#vestGrad)" stroke="#334155" stroke-width="1.5"/>
+
+    <!-- Vest Stand Collar -->
+    <path d="M150 255 Q165 240 180 255 L180 270 L155 270 Z" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <path d="M250 255 Q235 240 220 255 L220 270 L245 270 Z" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+
+    <!-- Vest Zipper Line & Seams -->
+    <line x1="198" y1="280" x2="198" y2="400" stroke="#64748b" stroke-width="2" stroke-dasharray="4 2"/>
+    <line x1="202" y1="280" x2="202" y2="400" stroke="#475569" stroke-width="1"/>
+
+    <!-- Vest Chest Logo / Patch ("Digitalisasi Pembelajaran") -->
+    <rect x="125" y="300" width="34" height="20" rx="3" fill="#ffffff" opacity="0.15"/>
+    <path d="M130 305 L140 305 L135 315 Z" fill="#ffffff" opacity="0.8"/>
+    <circle cx="150" cy="310" r="3" fill="#38bdf8" opacity="0.9"/>
+
+    <!-- Orange Lanyard Straps hanging around neck -->
+    <path d="M172 260 L188 350 L196 350 L176 260 Z" fill="#f97316"/>
+    <path d="M228 260 L212 350 L204 350 L224 260 Z" fill="#ea580c"/>
+
+    <!-- Lanyard Badge Holder & ID Card -->
+    <g transform="translate(180, 345)">
+      <!-- Clip -->
+      <rect x="15" y="0" width="10" height="8" rx="2" fill="#94a3b8"/>
+      <!-- ID Badge Card -->
+      <rect x="0" y="8" width="40" height="52" rx="4" fill="#881337" stroke="#ffffff" stroke-width="1.2" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.5))"/>
+      <rect x="4" y="12" width="32" height="12" rx="2" fill="#ffffff"/>
+      <text x="20" y="19" font-size="4" font-family="sans-serif" font-weight="bold" fill="#881337" text-anchor="middle">BIMTEK</text>
+      <text x="20" y="23" font-size="3" font-family="sans-serif" fill="#1e293b" text-anchor="middle">DIGITALISASI</text>
+      <circle cx="20" cy="33" r="6" fill="#be8251"/>
+      <rect x="8" y="44" width="24" height="4" rx="1" fill="#fef08a"/>
+      <text x="20" y="47" font-size="3" font-family="sans-serif" font-weight="bold" fill="#713f12" text-anchor="middle">JECKY M.</text>
+    </g>
+
+    <!-- Head & Face Structure -->
+    <!-- Ears -->
+    <ellipse cx="140" cy="155" rx="10" ry="16" fill="url(#skinBase)"/>
+    <ellipse cx="140" cy="155" rx="5" ry="9" fill="url(#skinShadow)"/>
+    <ellipse cx="260" cy="155" rx="10" ry="16" fill="url(#skinBase)"/>
+    <ellipse cx="260" cy="155" rx="5" ry="9" fill="url(#skinShadow)"/>
+
+    <!-- Head Shape -->
+    <path d="M142 140 C142 75, 258 75, 258 140 C258 190, 235 220, 200 220 C165 220, 142 190, 142 140 Z" fill="url(#skinBase)"/>
+
+    <!-- Hair (Cropped/Short clean hairline) -->
+    <path d="M143 130 C145 78, 255 78, 257 130 C254 110, 245 92, 225 90 C210 92, 190 92, 175 90 C155 92, 146 110, 143 130 Z" fill="#18181b"/>
+    <!-- Subtle hair texture -->
+    <path d="M145 130 Q200 80 255 130 Q240 85 200 85 Q160 85 145 130 Z" fill="#09090b" opacity="0.6"/>
+
+    <!-- Eyebrows -->
+    <path d="M160 135 Q175 130 188 135" stroke="#1c1917" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M212 135 Q225 130 240 135" stroke="#1c1917" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+    <!-- Eyes (Warm, smiling friendly expression) -->
+    <ellipse cx="174" cy="148" rx="8" ry="5.5" fill="#ffffff"/>
+    <circle cx="174" cy="148" r="4" fill="#292524"/>
+    <circle cx="172" cy="146" r="1.5" fill="#ffffff"/>
+
+    <ellipse cx="226" cy="148" rx="8" ry="5.5" fill="#ffffff"/>
+    <circle cx="226" cy="148" r="4" fill="#292524"/>
+    <circle cx="224" cy="146" r="1.5" fill="#ffffff"/>
+
+    <!-- Smile wrinkles & eye creases -->
+    <path d="M162 153 Q160 156 163 158" stroke="#a86e3f" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <path d="M238 153 Q240 156 237 158" stroke="#a86e3f" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+
+    <!-- Eyeglasses (Black-rimmed rounded rectangular glasses) -->
+    <!-- Left Lens Rim -->
+    <rect x="156" y="137" width="34" height="25" rx="9" fill="none" stroke="#09090b" stroke-width="3"/>
+    <!-- Right Lens Rim -->
+    <rect x="210" y="137" width="34" height="25" rx="9" fill="none" stroke="#09090b" stroke-width="3"/>
+    <!-- Bridge -->
+    <path d="M190 146 Q200 143 210 146" fill="none" stroke="#09090b" stroke-width="3"/>
+    <!-- Temples / Arms -->
+    <path d="M156 145 L142 147" stroke="#09090b" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M244 145 L258 147" stroke="#09090b" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Lens reflection highlight -->
+    <path d="M160 142 L172 142" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+    <path d="M214 142 L226 142" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- Nose -->
+    <path d="M200 144 L196 168 Q200 172 204 168 Z" fill="#be8251"/>
+    <path d="M193 169 Q200 174 207 169" stroke="#8f572a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Mustache -->
+    <path d="M185 180 Q200 176 215 180 Q200 184 185 180 Z" fill="#262626"/>
+
+    <!-- Smile / Mouth (Warm cheerful smile showing teeth) -->
+    <path d="M182 186 Q200 205 218 186 Z" fill="#7f1d1d"/>
+    <path d="M185 186 Q200 193 215 186 Z" fill="#ffffff"/>
+    <path d="M180 185 Q200 207 220 185" stroke="#7f1d1d" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+    <!-- Light Goatee / Chin Beard -->
+    <ellipse cx="200" cy="204" rx="7" ry="5" fill="#262626" opacity="0.8"/>
+  </g>
+
+  <!-- Outer Protective Border Ring -->
+  <circle cx="200" cy="200" r="192" fill="none" stroke="#10b981" stroke-width="5" stroke-dasharray="2 0" opacity="0.9"/>
+  <circle cx="200" cy="200" r="197" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.4"/>
+</svg>
