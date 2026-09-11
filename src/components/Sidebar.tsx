@@ -11,6 +11,7 @@ import {
   CheckSquare,
   FileSpreadsheet,
   QrCode,
+  Database,
   Moon,
   Sun,
   LogOut,
@@ -34,7 +35,8 @@ export type AppMenuTab =
   | 'journals'
   | 'attendance'
   | 'recap'
-  | 'scanner';
+  | 'scanner'
+  | 'database';
 
 interface SidebarProps {
   activeTab: AppMenuTab;
@@ -148,6 +150,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
       icon: QrCode,
       badge: 'Live',
       color: 'text-indigo-500',
+    },
+    {
+      id: 'database' as AppMenuTab,
+      label: 'Basis Data Lokal',
+      icon: Database,
+      badge: 'Offline',
+      color: 'text-blue-500',
     },
   ];
 

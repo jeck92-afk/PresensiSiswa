@@ -11,6 +11,7 @@ import {
   ChevronRight,
   MessageSquare,
   Database,
+  HardDrive,
   CheckCircle2,
   AlertCircle,
   Info,
@@ -65,6 +66,7 @@ import { StudentsManagementView } from './components/StudentsManagementView';
 import { SettingsView } from './components/SettingsView';
 import { StudentImportView } from './components/StudentImportView';
 import { GoogleSheetsDatabaseView } from './components/GoogleSheetsDatabaseView';
+import { LocalStorageDatabaseView } from './components/LocalStorageDatabaseView';
 import { SchoolLogo } from './components/SchoolLogo';
 import { DeveloperProfileModal } from './components/DeveloperProfileModal';
 import { TeachersView } from './components/teachers/TeachersView';
@@ -505,6 +507,7 @@ export default function App() {
     setClasses(INITIAL_CLASSES);
     setSubjects(INITIAL_SUBJECTS);
     setSchedules(INITIAL_SCHEDULES);
+    setJournals(INITIAL_JOURNALS);
     setConfig(DEFAULT_SCHOOL_CONFIG);
     showNotification('Data dikembalikan ke data sampel resmi Maluku', 'info');
   };
@@ -1111,6 +1114,21 @@ export default function App() {
               {/* In-App PWA Install Button */}
               <PWAInstallButton variant="header" />
 
+              {/* Basis Data Local Storage Button */}
+              <button
+                type="button"
+                onClick={() => setActiveTab('database')}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
+                  activeTab === 'database'
+                    ? 'bg-blue-600 text-white border-blue-600 shadow-2xs'
+                    : 'bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700'
+                }`}
+                title="Basis Data Penyimpanan Lokal (Local Storage Browser)"
+              >
+                <HardDrive className="w-3.5 h-3.5 text-blue-500" />
+                <span className="hidden sm:inline">Basis Data Lokal</span>
+              </button>
+
               <button
                 type="button"
                 onClick={() => setActiveTab('sheets')}
@@ -1361,6 +1379,30 @@ export default function App() {
             />
           )}
 
+          {activeTab === 'database' && (
+            <LocalStorageDatabaseView
+              config={config}
+              students={students}
+              records={records}
+              teachers={teachers}
+              classes={classes}
+              subjects={subjects}
+              schedules={schedules}
+              journals={journals}
+              onUpdateConfig={setConfig}
+              onUpdateStudents={setStudents}
+              onUpdateRecords={setRecords}
+              onUpdateTeachers={setTeachers}
+              onUpdateClasses={setClasses}
+              onUpdateSubjects={setSubjects}
+              onUpdateSchedules={setSchedules}
+              onUpdateJournals={setJournals}
+              onResetToSampleData={handleResetToSampleData}
+              onNavigateToSheets={() => setActiveTab('sheets')}
+              onShowNotification={showNotification}
+            />
+          )}
+
           {activeTab === 'settings' && (
             <SettingsView
               config={config}
@@ -1442,6 +1484,7 @@ export default function App() {
                     { id: 'attendance', label: '9. Absensi' },
                     { id: 'recap', label: '10. Rekap Absensi' },
                     { id: 'scanner', label: '11. Scan QR' },
+                    { id: 'database', label: '12. Basis Data Lokal' },
                   ].map((item) => (
                     <li key={item.id}>
                       <button

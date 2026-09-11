@@ -27,6 +27,7 @@ import {
   Activity,
   Zap,
   Database,
+  HardDrive,
   CloudCheck,
   ExternalLink,
   MessageSquare,
@@ -51,7 +52,7 @@ interface AdminLandingViewProps {
   students: Student[];
   records: AttendanceRecord[];
   spreadsheetInfo?: SpreadsheetInfo | null;
-  onNavigate: (tab: 'dashboard' | 'scanner' | 'cards' | 'logs' | 'students' | 'import' | 'sheets' | 'settings') => void;
+  onNavigate: (tab: 'dashboard' | 'scanner' | 'cards' | 'logs' | 'students' | 'import' | 'sheets' | 'settings' | 'database') => void;
   onNavigateToCards: (studentId?: string) => void;
   onOpenDeveloperModal?: () => void;
 }
@@ -330,7 +331,7 @@ export const AdminLandingView: React.FC<AdminLandingViewProps> = ({
             Klik tombol untuk navigasi instan
           </span>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-2">
           <button
             type="button"
             onClick={() => onNavigate('scanner')}
@@ -369,7 +370,7 @@ export const AdminLandingView: React.FC<AdminLandingViewProps> = ({
             </div>
             <div className="text-left min-w-0">
               <div className="truncate font-extrabold text-emerald-900">Rekap Presensi</div>
-              <div className="text-[10px] text-emerald-700/80 truncate">Harian, Mingguan, Bulanan, Tahunan</div>
+              <div className="text-[10px] text-emerald-700/80 truncate">Harian, Bulanan</div>
             </div>
           </button>
 
@@ -398,6 +399,20 @@ export const AdminLandingView: React.FC<AdminLandingViewProps> = ({
             <div className="text-left min-w-0">
               <div className="truncate font-extrabold text-amber-900">Upload Data</div>
               <div className="text-[10px] text-amber-700/80 truncate">Excel & CSV</div>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => onNavigate('database')}
+            className="flex items-center gap-2.5 p-2.5 rounded-xl border border-cyan-200 bg-cyan-50/60 hover:bg-cyan-100/80 text-cyan-900 font-bold text-xs transition-all active:scale-[0.98] cursor-pointer shadow-2xs group"
+          >
+            <div className="w-8 h-8 rounded-lg bg-cyan-600 text-white flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+              <HardDrive className="w-4 h-4" />
+            </div>
+            <div className="text-left min-w-0">
+              <div className="truncate font-extrabold text-cyan-900">Database Lokal</div>
+              <div className="text-[10px] text-cyan-700/80 truncate">Offline & Backup</div>
             </div>
           </button>
 
